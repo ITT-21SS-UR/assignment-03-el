@@ -1,0 +1,24 @@
+1. What does Hornbæk say about the relationship between self-reported and objectively measured task performance?
+
+
+
+
+2. Describe advantages and limitations of research hypotheses
+
+Hypotheses are useful for highlighting and clarifying research questions. They can be used to clarify important aspects of an experiment, such as dependent and independent variables.
+Furthermore, they can be used to compare already existing related work to one's own experiment, and assume potential changes in its outcome.
+Hypotheses are also a great way to 'package' an experiment report in. By first stating a hypotheses and then presenting the experiment, it might be easier for the reader to follow along and have a grasp of what is being looked at from the very beginning. However, Hornbæk emphasizes that if a hypotheses is only made for presentation purposes, after the experiment has already taken place, this should be made very clear in order to not make the findings of the experiment seem like something that was assumed in the beginning.
+Hypotheses for an experiment can be derived from theories. By thinking through relevant theories in advance, experimenters can often find many fitting hypotheses that can be used as a baseline for their experiment design.
+
+Besides the many advantages, hypotheses can come with drawbacks. One of those drawbacks is that the null hypothesis of an experiment is more than often only there so it can later be disproven by the findings, and only if this is the case the outcome is seen as "good". However, accepting the null hypothesis should not neccesarily be a reason to discard the outcome of the experiment, since there can still be valuable insight.
+It is also suggested to have more than only one hypothesis, on order to avoid focusing too much on only the one hypothesis and trying to force a beneficial outcome, while ignoring or overlooking facts that dictate otherwise.
+Furthermore this might straight up lead to some findings getting completely missed, since researchers often modify their experiments to better accomodate to the null hypothesis instead of further investigating their potential findings.
+
+Hornbæk concludes that thinking through possible hypotheses can benefit every experiment, however they are not mandatory.
+
+
+3. Is it acceptable to conduct user studies with media informatics students as participants instead of a broad sample of potential users? What are advantages and limitations? Name one topic for a user study where it would be problematic to have only media informatics students as participants. Name one counter-example
+
+Generally speaking, yes, it is acceptable to conduct an experiment with only (or mostly) media informatics students. Despite them being a very specific demographic, the most important thing is that their character and skills fit the experiment in such a way that the research question can be properly addressed. When selecting participants, this means that there are several characteristics that need to be thought through. These can be learned skills such as proficency with a computer, demographic data such as gender or religion, or one of many other factors such as financial status.
+An example for an experiment with only media informatics students as participants that would provide valid results is a user study for an app that is designed as a companion app for a course at university. For this very experiment it even makes the most sense to only use students of the respective subject, as people from outside of the university would lack the necessary background information.
+A study for which a broader sample would be needed could for example be a study about how long people in general spend time using technical devices (PC, Smartphone, etc.) per day. As media informatics students need those devices for most of their courses, and potential jobs, using only them as participants would heavily influence the results.
