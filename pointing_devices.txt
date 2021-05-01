@@ -1,0 +1,29 @@
+a) Which advantages do direct pointing devices have over indirect pointing devices? Name one use case where using a direct pointing device would not make any sense.
+
+Direct pointing devices have the advantage over indirect ones in that the user can usually use them intuitively. For example even people without much experience with technical devices - like elderly or very young people - can quickly understand that a stylus can be used on a tablet just like a pen on paper.
+With indirect pointing devices the user have to make the mental effort to translate the movement from the pointing devices to the movement on the device.
+However, this translation makes it possible to operate a mouse, for example, much more precisely than a finger on a touchpad. But especially on very large screens, it is only advantageous that a small movement of the mouse results in a larger movement of the cursor on the monitor. In a multi-monitor environment, it would be unthinkable to work only with direct pointing devices.
+
+b) How would you characterize “Shift” based on the classification criteria mentioned in the Wikipedia article?
+
+We would characterize the "SHIFT" as follows:
+    direct input: the pointer is at the same physical position as the finger (in this case the pointing device)
+    or???
+    indirect input: SHIFT solves the problem of the finger (pointing device) obscuring the area of the display that is being pointed to by displaying a copy of the obscured display section in an unused location.  The on-screen pointer is therefore not exactly at the same position as the physical pointer, but slightly offset.
+
+    absolute movement: A movement of the finger (pointing-device) is converted into a movement of the cursor without translation.
+
+    position control: Changing the position of the finger directly change the position of the pointer
+
+    Isometric and isotonic:
+    It's isotonic because the finger as input device is movable - moreover it's also isometric because the force of the finger on the display is measured.
+
+    translation: The device (finger) is physically translated.
+
+    degrees of freedom: 3 degrees (translation (x,y and z) with x and y movements on the screen and z the lifting of the finger)
+
+    also possible states???
+
+c) What is the size of the display used in the study?
+
+The study used a PDA with a display size of 550 x 730 mm or respectively 240 x 320 px.
