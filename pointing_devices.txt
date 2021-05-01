@@ -21,7 +21,7 @@ We would characterize the "SHIFT" as follows:
 
     degrees of freedom: 3 degrees (translation (x,y and z) with x and y movements on the screen and z the lifting of the finger)
 
-    also possible states???
+    possible states: SHIFT has only one possible state once activated.
 
 c) What is the size of the display used in the study?
 
