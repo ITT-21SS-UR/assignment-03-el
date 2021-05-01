@@ -7,16 +7,15 @@ However, this translation makes it possible to operate a mouse, for example, muc
 b) How would you characterize “Shift” based on the classification criteria mentioned in the Wikipedia article?
 
 We would characterize the "SHIFT" as follows:
-    direct input: the pointer is at the same physical position as the finger (in this case the pointing device)
-    or???
-    indirect input: SHIFT solves the problem of the finger (pointing device) obscuring the area of the display that is being pointed to by displaying a copy of the obscured display section in an unused location.  The on-screen pointer is therefore not exactly at the same position as the physical pointer, but slightly offset.
+    direct input: Although a representation of the hidden section including the on-screen pointer is displayed at a different location on the screen, the actual target is located at the same physical position as the finger -
+    The pointer is at the same physical position as the finger (in this case the pointing device).
 
     absolute movement: A movement of the finger (pointing-device) is converted into a movement of the cursor without translation.
 
     position control: Changing the position of the finger directly change the position of the pointer
 
-    Isometric and isotonic:
-    It's isotonic because the finger as input device is movable - moreover it's also isometric because the force of the finger on the display is measured.
+    isometric and isotonic:
+    It's isotonic because the finger as input device is movable.
 
     translation: The device (finger) is physically translated.
 
