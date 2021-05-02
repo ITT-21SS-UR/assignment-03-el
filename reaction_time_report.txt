@@ -1,0 +1,4 @@
+As reported in the experiment design (reaction_time_experiment_design.pdf), there are a number of limitations to consider regarding the experiment setup.
+
+On the one hand, the experiment was performed on two different computers. After running the experiment, it became known that the numpad was used in one case and the standard num keys in the other case. 
+In addition, the experiment was conducted at the study authors' homes, so external influences could not be ruled out in advance. In fact, the conditions during the tests were different: In tests four to six, there was noise from a construction site near the test setup.
