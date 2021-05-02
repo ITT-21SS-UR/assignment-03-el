@@ -33,7 +33,7 @@ class ConditionType(Enum):
 class SpaceRecorder(QtWidgets.QWidget):
     MIN_DELAY_MS = 5000  # minimum delay before the reaction stimulus appears
     MAX_DELAY_MS = 10000  # maximum delay before the reaction stimulus appears
-    REPETITIONS = 2  # number of repetitions per condition type
+    REPETITIONS = 10  # number of repetitions per condition type
 
     # the application state is used to hold the state of the application and display the correct explanations / stimuli
     applicationState = ApplicationState.EXPLANATION_ONE
