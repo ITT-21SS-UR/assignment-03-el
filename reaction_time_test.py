@@ -4,11 +4,9 @@ import os
 import random
 import sys
 import time
-import csv
 
-from PyQt5 import QtGui, QtWidgets, QtCore
+from PyQt5 import QtWidgets
 from enum import Enum
-from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import uic, Qt, QtCore
 from datetime import datetime
 import pandas as pd
@@ -69,44 +67,44 @@ class SpaceRecorder(QtWidgets.QWidget):
         super().__init__()
         self.counter = 0
         self.ui = uic.loadUi("experiment_ui.ui", self)
-        self.setParticipantId()
-        self.initUI()
-        self.setFirstExperiment()
+        self.set_participant_id()
+        self.init_ui()
+        self.set_first_experiment()
         # self.showExplanationOne()  # upon startup, show the explanation for the first task
 
-    def setParticipantId(self):
+    def set_participant_id(self):
         try:
             self.participant_id = int(sys.argv[1])
         except (ValueError, IndexError):
             print("First argument must be an ID (integer)!")
             sys.exit(3)
 
-    def setFirstExperiment(self):
+    def set_first_experiment(self):
         if self.participant_id % 2:
             self.firstExperimentFinished = True
             self.applicationState = ApplicationState.EXPLANATION_ONE
-            self.showExplanationOne()
+            self.show_explanation_one()
         else:
             self.secondExperimentFinished = True
             self.applicationState = ApplicationState.EXPLANATION_TWO
-            self.showExplanationTwo()
+            self.show_explanation_two()
 
-    def showExplanationOne(self):
+    def show_explanation_one(self):
         self.ui.hintText.setVisible(True)
         self.ui.hintText.setText("Press Space when the background color changes! Press any key to start.")
 
-    def showExplanationTwo(self):
+    def show_explanation_two(self):
         self.ui.hintText.setVisible(True)
         self.ui.hintText.setText("For the next test, the display will show a randomly generated number between "
                                  "1 and 3. Press the correct number on your keyboard! "
                                  "Place your fingers on the numbers 1, 2, 3 and press any key when you are ready.")
 
-    def showFinishedText(self):
+    def show_finished_text(self):
         self.ui.hintText.setVisible(True)
         self.ui.hintText.setText("The experiment is complete. Thanks for participating! "
                                  "Please press any key to restart the experiment.")
 
-    def startExperimentOne(self):
+    def start_experiment_one(self):
         if self.counter < self.REPETITIONS:
             self.ui.hintText.setVisible(False)
             self.random_delay = random.randrange(self.MIN_DELAY_MS, self.MAX_DELAY_MS)
@@ -114,17 +112,17 @@ class SpaceRecorder(QtWidgets.QWidget):
             self.shown_stimulus = "orange"
             self.correct_key = "Space"
 
-            self.timer.singleShot(self.random_delay, lambda: self.triggerStimulusSimple())
+            self.timer.singleShot(self.random_delay, lambda: self.trigger_stimulus_simple())
 
         else:
             if self.secondExperimentFinished:
                 self.applicationState = ApplicationState.FINISHED
-                self.showFinishedText()
+                self.show_finished_text()
             else:
                 self.applicationState = ApplicationState.EXPLANATION_TWO
-                self.showExplanationTwo()
+                self.show_explanation_two()
 
-    def startExperimentTwo(self):
+    def start_experiment_two(self):
         if self.counter < self.REPETITIONS:
             self.ui.hintText.setVisible(False)
             self.random_delay = random.randrange(self.MIN_DELAY_MS, self.MAX_DELAY_MS)
@@ -132,30 +130,30 @@ class SpaceRecorder(QtWidgets.QWidget):
             self.correct_key = random.choice(self.numbers)
             self.shown_stimulus = "Number " + str(self.correct_key)
 
-            self.timer.singleShot(self.random_delay, lambda: self.triggerStimulusComplex())
+            self.timer.singleShot(self.random_delay, lambda: self.trigger_stimulus_complex())
 
         else:
             if self.firstExperimentFinished:
                 self.applicationState = ApplicationState.FINISHED
-                self.showFinishedText()
+                self.show_finished_text()
             else:
                 self.applicationState = ApplicationState.EXPLANATION_ONE
-                self.showExplanationOne()
+                self.show_explanation_one()
 
-    def triggerStimulusSimple(self):
+    def trigger_stimulus_simple(self):
         self.setStyleSheet(self.SIMPLE_REACTION_STYLE)
         self.reaction_trigger = True
         self.reaction_start_time_ms = round(time.time() * 1000)
         self.timestamp = datetime.now()
 
-    def triggerStimulusComplex(self):
+    def trigger_stimulus_complex(self):
         self.ui.complexText.setVisible(True)
         self.ui.complexText.setText(str(self.correct_key))
         self.reaction_trigger = True
         self.reaction_start_time_ms = round(time.time() * 1000)
         self.timestamp = datetime.now()
 
-    def initUI(self):
+    def init_ui(self):
         self.ui.complexText.setVisible(False)
         self.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.setStyleSheet(self.DEFAULT_STYLE)
@@ -166,13 +164,13 @@ class SpaceRecorder(QtWidgets.QWidget):
         if self.applicationState == ApplicationState.EXPLANATION_ONE:
             self.counter = 0
             self.applicationState = ApplicationState.EXPERIMENT_ONE
-            self.startExperimentOne()
+            self.start_experiment_one()
             return
 
         if self.applicationState == ApplicationState.EXPLANATION_TWO:
             self.counter = 0
             self.applicationState = ApplicationState.EXPERIMENT_TWO
-            self.startExperimentTwo()
+            self.start_experiment_two()
             return
 
         if self.applicationState == ApplicationState.FINISHED:
@@ -181,13 +179,13 @@ class SpaceRecorder(QtWidgets.QWidget):
             self.counter = 0
             self.participant_id += 1
             self.applicationState = ApplicationState.EXPLANATION_ONE
-            self.setFirstExperiment()
+            self.set_first_experiment()
             return
 
         if self.reaction_trigger:
-            self.handleReaction(ev)
+            self.handle_reaction(ev)
 
-    def handleReaction(self, ev):
+    def handle_reaction(self, ev):
         self.reaction_end_time_ms = round(time.time() * 1000)
         print("Reaction Time: " + str(self.reaction_end_time_ms - self.reaction_start_time_ms))
         self.reaction_trigger = False
@@ -197,11 +195,11 @@ class SpaceRecorder(QtWidgets.QWidget):
 
         if self.applicationState == ApplicationState.EXPERIMENT_ONE:
             self.setStyleSheet(self.DEFAULT_STYLE)
-            self.startExperimentOne()
+            self.start_experiment_one()
 
         elif self.applicationState == ApplicationState.EXPERIMENT_TWO:
             self.ui.complexText.setVisible(False)
-            self.startExperimentTwo()
+            self.start_experiment_two()
 
     def log_to_csv(self, pressed_key):
         pressed_key = Qt.QKeySequence(pressed_key).toString()
@@ -232,7 +230,6 @@ def init_csv():
     #     df = pd.read_csv("logs.csv")
     #     last_row = df.tail(1)
     #     last_used_id = last_row.iloc[0].ID
-
 
 
 def main():
