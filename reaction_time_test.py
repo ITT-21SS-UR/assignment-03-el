@@ -1,5 +1,12 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
+"""
+Our implementation of the reaction test assignment.
+Reactions are tested under two different conditions (simple, complex) with explanations for each.
+The results of the reaction tests are logged to a .csv file.
+The workload was evenly distributed across both team members.
+authors: ev, lj
+"""
 import os
 import random
 import sys
@@ -12,10 +19,14 @@ from datetime import datetime
 import pandas as pd
 
 FIELDNAMES = ['ID', 'condition', 'shown_stimulus', 'pressed_key', 'is_correct_key', 'reaction_time_in_ms',
-              'timestamp']  # csv header
+              'timestamp']  # csv header fields
 
 
 class ApplicationState(Enum):
+    """
+    Enum used to keep track of the application state
+    author: lj
+    """
     EXPLANATION_ONE = 1
     EXPERIMENT_ONE = 2
     EXPLANATION_TWO = 3
@@ -36,7 +47,7 @@ class SpaceRecorder(QtWidgets.QWidget):
     # the application state is used to hold the state of the application and display the correct explanations / stimuli
     applicationState = ApplicationState.EXPLANATION_ONE
 
-    numbers = [1, 2, 3]
+    numbers = [1, 2, 3]  # possible numbers that can be displayed for the complex stimulus
 
     # Background styles used for experiment 1
     # TODO we can add more styles and then display a random color instead of only orange
@@ -70,9 +81,12 @@ class SpaceRecorder(QtWidgets.QWidget):
         self.set_participant_id()
         self.init_ui()
         self.set_first_experiment()
-        # self.showExplanationOne()  # upon startup, show the explanation for the first task
 
     def set_participant_id(self):
+        """
+        uses the passed argument and sets it as participant ID
+        author: lj
+        """
         try:
             self.participant_id = int(sys.argv[1])
         except (ValueError, IndexError):
@@ -80,6 +94,10 @@ class SpaceRecorder(QtWidgets.QWidget):
             sys.exit(3)
 
     def set_first_experiment(self):
+        """
+        set the first experiment to either be the complex or simple one, depending on participant ID
+        author: ev
+        """
         if self.participant_id % 2:
             self.firstExperimentFinished = True
             self.applicationState = ApplicationState.EXPLANATION_ONE
@@ -105,6 +123,10 @@ class SpaceRecorder(QtWidgets.QWidget):
                                  "Please press any key to restart the experiment.")
 
     def start_experiment_one(self):
+        """
+        start the loop for the first experiment (simple stimulus)
+        author :lj
+        """
         if self.counter < self.REPETITIONS:
             self.ui.hintText.setVisible(False)
             self.random_delay = random.randrange(self.MIN_DELAY_MS, self.MAX_DELAY_MS)
@@ -123,6 +145,10 @@ class SpaceRecorder(QtWidgets.QWidget):
                 self.show_explanation_two()
 
     def start_experiment_two(self):
+        """
+        start the loop for the second experiment (complex stimulus)
+        author :lj
+        """
         if self.counter < self.REPETITIONS:
             self.ui.hintText.setVisible(False)
             self.random_delay = random.randrange(self.MIN_DELAY_MS, self.MAX_DELAY_MS)
@@ -141,12 +167,20 @@ class SpaceRecorder(QtWidgets.QWidget):
                 self.show_explanation_one()
 
     def trigger_stimulus_simple(self):
+        """
+        trigger the simple stimulus
+        author: ev
+        """
         self.setStyleSheet(self.SIMPLE_REACTION_STYLE)
         self.reaction_trigger = True
         self.reaction_start_time_ms = round(time.time() * 1000)
         self.timestamp = datetime.now()
 
     def trigger_stimulus_complex(self):
+        """
+        trigger the complex stimulus
+        author: ev
+        """
         self.ui.complexText.setVisible(True)
         self.ui.complexText.setText(str(self.correct_key))
         self.reaction_trigger = True
@@ -160,6 +194,10 @@ class SpaceRecorder(QtWidgets.QWidget):
         self.show()
 
     def keyPressEvent(self, ev):
+        """
+        listen for keypresses and decide how to react based on ApplicationState
+        authors: ev, lj
+        """
 
         if self.applicationState == ApplicationState.EXPLANATION_ONE:
             self.counter = 0
@@ -186,6 +224,12 @@ class SpaceRecorder(QtWidgets.QWidget):
             self.handle_reaction(ev)
 
     def handle_reaction(self, ev):
+        """
+        react to a keypress after the stimulus was shown
+        measures the reaction time in ms
+        resets the ui components and boolean flags
+        author: ev
+        """
         self.reaction_end_time_ms = round(time.time() * 1000)
         print("Reaction Time: " + str(self.reaction_end_time_ms - self.reaction_start_time_ms))
         self.reaction_trigger = False
@@ -202,6 +246,11 @@ class SpaceRecorder(QtWidgets.QWidget):
             self.start_experiment_two()
 
     def log_to_csv(self, pressed_key):
+        """
+        log the relevant data to our .csv file in the root folder
+        each call appends a line to the already existing file
+        author: lj
+        """
         pressed_key = Qt.QKeySequence(pressed_key).toString()
         correct_key = str(self.correct_key)
         is_correct_key = pressed_key == correct_key
@@ -222,11 +271,16 @@ class SpaceRecorder(QtWidgets.QWidget):
 
 
 def init_csv():
+    """
+    create our .csv log file if it does not exist already
+    if the file is empty, write the csv header
+    author: lj
+    """
     open('logs.csv', 'a')
     if os.stat("logs.csv").st_size == 0:  # write csv header if file is empty
         df = pd.DataFrame(columns=FIELDNAMES)
         df.to_csv('logs.csv', index=False)
-    # else:  this can be used to find the last logged ID in the file
+    # else:  this can be used to find the last logged ID in the file maybe we could use this later
     #     df = pd.read_csv("logs.csv")
     #     last_row = df.tail(1)
     #     last_used_id = last_row.iloc[0].ID
