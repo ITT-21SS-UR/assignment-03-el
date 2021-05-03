@@ -7,21 +7,20 @@ However, this translation makes it possible to operate a mouse, for example, muc
 b) How would you characterize “Shift” based on the classification criteria mentioned in the Wikipedia article?
 
 We would characterize the "SHIFT" as follows:
-    direct input: Although a representation of the hidden section including the on-screen pointer is displayed at a different location on the screen, the actual target is located at the same physical position as the finger -
-    The pointer is at the same physical position as the finger (in this case the pointing device).
+    direct input: Although a representation of the hidden section including the on-screen pointer is displayed at a different location on the screen, the actual target is located at the same physical position as the finger on the touch-screen.
 
-    absolute movement: A movement of the finger (pointing-device) is converted into a movement of the cursor without translation.
+    absolute movement: A movement of the finger on the touch-screen is converted into a movement of the cursor without translation.
 
-    position control: Changing the position of the finger directly change the position of the pointer
+    position control: Changing the position of the finger directly change the position of the pointer.
 
-    isometric and isotonic:
-    It's isotonic because the finger as input device is movable.
+    isometric and isotonic: It's isotonic because the finger as input device is movable.
 
     translation: The device (finger) is physically translated.
 
     degrees of freedom: 3 degrees (translation (x,y and z) with x and y movements on the screen and z the lifting of the finger)
 
-    possible states: SHIFT has only one possible state once activated.
+    possible states: Like normal touch-screens SHIFT has the status "out of range" and "tracking". In addition to these two states, an target is selected by lifting the finger.
+			
 
 c) What is the size of the display used in the study?
 
