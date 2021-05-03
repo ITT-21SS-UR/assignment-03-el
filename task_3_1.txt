@@ -1,9 +1,9 @@
 1. What does Hornbæk say about the relationship between self-reported and objectively measured task performance?
 
-In his paper, Hornbaek gives three reasons for conducting experiments in HCI. First, he mentions the validation of new technologies and the answering of research questions. 
-Last, he also emphasizes that experiments are important because self-reported satisfaction with a system is not sufficient for this purpose. He describes it as difficult to justify one's actions and to self-report satisfaction.
-
-
+In his paper, Hornbæk gives three reasons for conducting experiments in HCI. First, he mentions the validation of new technologies and the answering of research questions. 
+Last, he also emphasizes that experiments are important because self-reported satisfaction with a system is not sufficient for this purpose.
+At another point Hornbæk talks about the importance of choosing the right dependent variable. He emphasizes that the subjective outcome often differs from the actual measured outcome.
+As possible consequence of this, Hornbæk suggests to collect both types of data: self-reported and measured. 
 
 2. Describe advantages and limitations of research hypotheses
 
