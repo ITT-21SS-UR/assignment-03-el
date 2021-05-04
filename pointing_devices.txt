@@ -11,7 +11,7 @@ We would characterize the "SHIFT" as follows:
 
     absolute movement: A movement of the finger on the touchscreen is converted into a movement of the cursor without translation.
 
-    position control: Changing the position of the finger on the touchscreen directly change the position of the pointer.
+    position control: Changing the position of the finger on the touchscreen directly changes the position of the pointer.
 
     isometric: It's isometric, because the toucscreen as input device is unmovable.
 
@@ -19,7 +19,7 @@ We would characterize the "SHIFT" as follows:
 
     degrees of freedom: 3 degrees (translation (x,y and z) with x and y movements on the screen and z the lifting of the finger)
 
-    possible states: Like normal touchscreens SHIFT has the status "out of range" and "tracking". In addition to these two states, an target is selected by lifting the finger.
+    possible states: Like normal touchscreens SHIFT has the status "out of range" and "tracking". In addition to these two states, a target is selected by lifting the finger.
 			
 
 c) What is the size of the display used in the study?
