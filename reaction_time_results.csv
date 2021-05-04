@@ -59,3 +59,63 @@ ID,condition,shown_stimulus,pressed_key,is_correct_key,reaction_time_in_ms,times
 3,complex,Number 3,3,True,463,2021-05-01 09:28:07.070311
 3,complex,Number 1,1,True,463,2021-05-01 09:28:13.765976
 3,complex,Number 3,3,True,518,2021-05-01 09:28:19.765209
+4,complex,Number 2,2,True,709,2021-05-01 15:15:59.328365
+4,complex,Number 3,3,True,586,2021-05-01 15:16:10.326046
+4,complex,Number 1,1,True,592,2021-05-01 15:16:16.329727
+4,complex,Number 3,3,True,490,2021-05-01 15:16:25.333284
+4,complex,Number 1,1,True,474,2021-05-01 15:16:31.330124
+4,complex,Number 3,3,True,712,2021-05-01 15:16:39.331219
+4,complex,Number 1,1,True,534,2021-05-01 15:16:49.333983
+4,complex,Number 3,3,True,547,2021-05-01 15:16:55.326311
+4,complex,Number 1,1,True,458,2021-05-01 15:17:01.877014
+4,complex,Number 3,3,True,551,2021-05-01 15:17:10.825034
+4,simple,orange,Space,True,354,2021-05-01 15:17:21.332273
+4,simple,orange,Space,True,346,2021-05-01 15:17:28.335855
+4,simple,orange,Space,True,278,2021-05-01 15:17:36.330492
+4,simple,orange,Space,True,328,2021-05-01 15:17:44.328751
+4,simple,orange,Space,True,386,2021-05-01 15:17:50.328852
+4,simple,orange,Space,True,310,2021-05-01 15:18:00.334781
+4,simple,orange,Space,True,300,2021-05-01 15:18:08.331688
+4,simple,orange,Space,True,456,2021-05-01 15:18:16.325809
+4,simple,orange,Space,True,319,2021-05-01 15:18:23.329458
+4,simple,orange,Space,True,313,2021-05-01 15:18:32.333997
+5,simple,orange,Space,True,323,2021-05-01 15:18:48.332474
+5,simple,orange,Space,True,289,2021-05-01 15:18:56.333044
+5,simple,orange,Space,True,306,2021-05-01 15:19:04.327057
+5,simple,orange,Space,True,235,2021-05-01 15:19:11.330062
+5,simple,orange,Space,True,368,2021-05-01 15:19:18.330026
+5,simple,orange,Space,True,255,2021-05-01 15:19:25.330959
+5,simple,orange,Space,True,387,2021-05-01 15:19:34.329592
+5,simple,orange,Space,True,327,2021-05-01 15:19:40.330913
+5,simple,orange,Space,True,393,2021-05-01 15:19:46.329391
+5,simple,orange,Space,True,328,2021-05-01 15:19:53.882611
+5,complex,Number 2,2,True,647,2021-05-01 15:20:08.832003
+5,complex,Number 1,1,True,511,2021-05-01 15:20:17.331551
+5,complex,Number 1,1,True,798,2021-05-01 15:20:26.326242
+5,complex,Number 1,1,True,497,2021-05-01 15:20:35.331455
+5,complex,Number 2,2,True,587,2021-05-01 15:20:42.781275
+5,complex,Number 2,2,True,493,2021-05-01 15:20:48.325651
+5,complex,Number 2,2,True,553,2021-05-01 15:20:58.325310
+5,complex,Number 2,2,True,614,2021-05-01 15:21:06.327009
+5,complex,Number 1,1,True,609,2021-05-01 15:21:15.333426
+5,complex,Number 1,1,True,507,2021-05-01 15:21:22.328957
+6,complex,Number 2,2,True,582,2021-05-01 15:21:35.328501
+6,complex,Number 3,3,True,675,2021-05-01 15:21:41.329263
+6,complex,Number 2,2,True,542,2021-05-01 15:21:48.849682
+6,complex,Number 3,3,True,587,2021-05-01 15:21:56.875276
+6,complex,Number 2,2,True,503,2021-05-01 15:22:06.328062
+6,complex,Number 2,2,True,615,2021-05-01 15:22:16.333342
+6,complex,Number 3,3,True,582,2021-05-01 15:22:24.331105
+6,complex,Number 2,2,True,549,2021-05-01 15:22:31.328246
+6,complex,Number 3,3,True,625,2021-05-01 15:22:41.328927
+6,complex,Number 1,1,True,574,2021-05-01 15:22:47.779386
+6,simple,orange,Space,True,432,2021-05-01 15:23:01.334080
+6,simple,orange,Space,True,304,2021-05-01 15:23:08.880220
+6,simple,orange,Space,True,377,2021-05-01 15:23:18.333463
+6,simple,orange,Space,True,330,2021-05-01 15:23:26.857790
+6,simple,orange,Space,True,356,2021-05-01 15:23:36.334087
+6,simple,orange,Space,True,542,2021-05-01 15:23:42.325476
+6,simple,orange,Space,True,346,2021-05-01 15:23:49.331361
+6,simple,orange,Space,True,382,2021-05-01 15:23:55.876172
+6,simple,orange,Space,True,408,2021-05-01 15:24:01.879209
+6,simple,orange,Space,True,343,2021-05-01 15:24:08.332482
